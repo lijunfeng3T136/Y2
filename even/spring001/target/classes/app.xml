@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.sz.old.bean.Girl" id="girl">
+        <property name="name" value="小龙女"/>
+        <property name="color" value="红"/>
+        <property name="luckNum" value="9"/>
+    </bean>
+    <bean class="com.sz.old.bean.Girl" id="girlTwo">
+        <property name="name" value="杨过"/>
+        <property name="color" value="黑"/>
+        <property name="luckNum" value="6"/>
+    </bean>
+</beans>
+
