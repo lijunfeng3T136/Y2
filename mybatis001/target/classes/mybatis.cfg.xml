@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--编写配置文件-->
+    <!--配置环境们，配置环境
+        生产环境
+        测试环境
+        开发环境
+    -->
+    <properties resource="db.properties">
+        <property name="username" value="root1"></property>
+    </properties>
+
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"/>
+            <!--支持三种类型 UNPOOLED  POOLED  JNDI-->
+            <dataSource type="POOLED">
+                <!--数据库连接的四项基本属性-->
+                <property name="url" value="${url}"/>
+                <property name="driver" value="${driver}"></property>
+                <property name="username" value="${username}"></property>
+                <property name="password" value="${password}"></property>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="com.sz.mappers"/>
+
+    </mappers>
+</configuration>
