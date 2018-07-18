@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.sz.bean.book" id="book" init-method="init">
+        <property name="name" value="西游记"/>
+        <property name="price" value="88.8"/>
+    </bean>
+    <bean class="com.sz.bean.book" id="book2" init-method="init" destroy-method="inits">
+        <property name="name" value="西游记"/>
+        <property name="price" value="88.8"/>
+    </bean>
+    <bean class="com.sz.bean.BookTwo" id="bookTwo">
+       <property name="name">
+           <array>
+               <value>斗罗大陆</value>
+               <value>天上人间</value>
+               <value>完美世界</value>
+               <value>元尊</value>
+           </array>
+       </property>
+    </bean>
+    <bean class="com.sz.bean.BookTwo" id="bookThree">
+        <property name="names">
+          <set>
+              <bean class="com.sz.bean.book" >
+                  <property name="name" value="心理罪"/>
+                  <property name="price" value="56.5"/>
+              </bean>
+              <bean class="com.sz.bean.book" >
+                  <property name="name" value="七宗罪"/>
+                  <property name="price" value="46.5"/>
+              </bean>
+          </set>
+        </property>
+    </bean>
+    <bean class="com.sz.bean.BookTwo" id="bookMaps">
+        <property name="bookMap">
+            <map>
+                <entry key="one">
+                    <bean class="com.sz.bean.book">
+                        <property name="name" value="倚天屠龙记"/>
+                        <property name="price" value="100.0"/>
+                    </bean>
+                </entry>
+                <entry key="two">
+                    <bean class="com.sz.bean.book">
+                        <property name="name" value="大话西游"/>
+                        <property name="price" value="120.0"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>
